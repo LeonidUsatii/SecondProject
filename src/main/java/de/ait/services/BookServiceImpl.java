@@ -1,7 +1,7 @@
 package de.ait.services;
 
 import de.ait.models.Book;
-import de.ait.models.Genre;
+import de.ait.models.GenreForBooks;
 import de.ait.repositories.BooksRepository;
 
 import java.util.ArrayList;
@@ -17,9 +17,9 @@ public class BookServiceImpl implements BooksService{
 
     @Override
     public void addBook(String title, String author, double price,
-                        String releaseYear, Genre genre) {
+                        String releaseYear, GenreForBooks genreForBooks) {
 
-        booksRepository.writeBookToFile(new Book(title, author, price, releaseYear, genre));
+        booksRepository.writeBookToFile(new Book(title, author, price, releaseYear, genreForBooks));
     }
 
     @Override

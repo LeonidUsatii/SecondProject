@@ -1,33 +1,28 @@
 package de.ait.services;
 
-import models.Good;
-import models.Order;
-import models.User;
-import repositories.GoodsRepository;
-import repositories.OrdersRepository;
-import repositories.UsersRepository;
+
+import de.ait.models.Order;
+import de.ait.models.Product;
+import de.ait.models.User;
+import de.ait.repositories.OrdersRepository;
+import de.ait.repositories.ProductsRepository;
+import de.ait.repositories.UsersRepository;
 
 import java.time.LocalDateTime;
 import java.util.UUID;
 
-/**
- * 6/20/2023
- * cohort25
- *
- * @author Marsel Sidikov (AIT TR)
- */
 public class OrdersServiceImpl implements OrdersService {
 
     private UsersRepository usersRepository;
-    private GoodsRepository goodsRepository;
+    private ProductsRepository productsRepository;
 
     private OrdersRepository ordersRepository;
 
     public OrdersServiceImpl(UsersRepository usersRepository,
-                             GoodsRepository goodsRepository,
+                             ProductsRepository goodsRepository,
                              OrdersRepository ordersRepository) {
         this.usersRepository = usersRepository;
-        this.goodsRepository = goodsRepository;
+        this.productsRepository = goodsRepository;
         this.ordersRepository = ordersRepository;
     }
 
@@ -39,16 +34,16 @@ public class OrdersServiceImpl implements OrdersService {
             throw new IllegalArgumentException("Пользователь не найден");
         }
 
-        Good good = goodsRepository.findByTitle(title); // находим товар по названию
+        Product product = productsRepository.findByTitle(title); // находим товар по названию
 
-        if (good == null) {
+        if (product == null) {
             throw new IllegalArgumentException("Товар не найден");
         }
 
         Order order = new Order(
                 UUID.randomUUID().toString(), // сгенерировали идентификатор
                 LocalDateTime.now(),
-                good.getId(),
+                product.getId(),
                 user.getId()
         );
 

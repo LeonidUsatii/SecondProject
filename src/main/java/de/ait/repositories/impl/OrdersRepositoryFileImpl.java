@@ -1,18 +1,13 @@
 package de.ait.repositories.impl;
 
-import models.Order;
-import repositories.OrdersRepository;
+
+import de.ait.models.Order;
+import de.ait.repositories.OrdersRepository;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 
-/**
- * 6/20/2023
- * cohort25
- *
- * @author Marsel Sidikov (AIT TR)
- */
 public class OrdersRepositoryFileImpl implements OrdersRepository {
 
     private String fileName;

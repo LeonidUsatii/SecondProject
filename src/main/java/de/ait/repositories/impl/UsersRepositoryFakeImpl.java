@@ -1,16 +1,10 @@
 package de.ait.repositories.impl;
 
-import models.User;
-import repositories.UsersRepository;
+import de.ait.models.User;
+import de.ait.repositories.UsersRepository;
 
-import java.util.UUID;
 
-/**
- * 6/20/2023
- * cohort25
- *
- * @author Marsel Sidikov (AIT TR)
- */
+
 public class UsersRepositoryFakeImpl implements UsersRepository {
     @Override
     public void save(User model) {

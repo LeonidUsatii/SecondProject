@@ -1,5 +1,5 @@
 package de.ait.models;
 
-public enum Genre {
+public enum GenreForBooks {
     DETECTIVE, NOVEL, POETRY, FANTASY, EDUCATION, KIDS
 }

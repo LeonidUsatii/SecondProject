@@ -1,12 +1,6 @@
 package de.ait.models;
 
-/**
- * 6/20/2023
- * cohort25
- *
- * @author Marsel Sidikov (AIT TR)
- */
-public class User { // пользователь
+public class User {
     private String id;
     private String email;
     private String password;

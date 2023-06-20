@@ -1,8 +1,7 @@
 package de.ait.app;
 
-import de.ait.models.Genre;
+import de.ait.models.GenreForBooks;
 import de.ait.repositories.BooksRepository;
-import de.ait.repositories.BooksRepositoryListImpl;
 import de.ait.repositories.BooksRepositoryTextFileImpl;
 import de.ait.services.BookServiceImpl;
 import de.ait.services.BooksService;
@@ -60,30 +59,30 @@ public class Main {
 
                     command = scanner.nextInt();
                     scanner.nextLine();
-                    Genre genre = Genre.DETECTIVE;
+                    GenreForBooks genreForBooks = GenreForBooks.DETECTIVE;
 
                     switch (command) {
                         case 1:
-                            genre = Genre.DETECTIVE;
+                            genreForBooks = GenreForBooks.DETECTIVE;
                             break;
                         case 2:
-                            genre = Genre.NOVEL;
+                            genreForBooks = GenreForBooks.NOVEL;
                             break;
                         case 3:
-                            genre = Genre.POETRY;
+                            genreForBooks = GenreForBooks.POETRY;
                             break;
                         case 4:
-                            genre = Genre.FANTASY;
+                            genreForBooks = GenreForBooks.FANTASY;
                             break;
                         case 5:
-                            genre = Genre.EDUCATION;
+                            genreForBooks = GenreForBooks.EDUCATION;
                             break;
                         case 6:
-                            genre = Genre.KIDS;
+                            genreForBooks = GenreForBooks.KIDS;
                             break;
                     }
 
-                    booksService.addBook(title, author, price, releaseYear, genre);
+                    booksService.addBook(title, author, price, releaseYear, genreForBooks);
                     break;
                 case 0:
                     System.out.println("Выход");
